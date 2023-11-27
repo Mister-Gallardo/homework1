@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasks on JS</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 style="font-size: 40px; text-align: center;">Калькуляторы фигур на JavaScript</h2>
+    <div class="task1" style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px;">
+        <div class="task1__1" style="border: 4px solid black; padding: 10px; width: 45%;">
+            <h3 style="font-size: 27px;">Калькулятор площади и периметра квадрата</h3>
+            <label for="square_value" style="font-size: 20px;">Введите длину стороны квадрата: </label>
+            <input type="number" id="square_value">
+            <button onclick="calculate_square()">Рассчитать</button>
+        
+            <p style="font-size: 20px; margin-bottom: -5px;">Площадь квадрата: <span id="area_square"></span></p>
+            <p style="font-size: 20px;">Периметр квадрата: <span id="perimeter_square"></span></p>
+        </div>
+        <div class="task1__2" style="border: 4px solid black; padding: 10px; width: 45%;">
+            <h3 style="font-size: 26px;">Калькулятор площади и периметра прямоугольника</h1>
+            <label for="pryamo_value_1" style="font-size: 20px;">Длина: </label>
+            <input type="number" id="pryamo_value_1" style="margin-right: 15px;">
+            <label for="pryamo_value_2" style="font-size: 20px;">Ширина: </label>
+            <input type="number" id="pryamo_value_2" style="margin-right: 15px;">
+            <button onclick="calculate_pryamo()">Рассчитать</button>
+        
+            <p style="font-size: 20px; margin-bottom: -5px;">Площадь прямоугольника: <span id="area_pryamo"></span></p>
+            <p style="font-size: 20px;">Периметр прямоугольника: <span id="perimeter_pryamo"></span></p>
+        </div>
+        <div class="task1__3" style="border: 4px solid black; padding: 10px; width: 45%;">
+            <h3 style="font-size: 27px;">Калькулятор площади и периметра круга</h3>
+            <label for="circle_value" style="font-size: 20px;">Введите радиус круга: </label>
+            <input type="number" id="circle_value">
+            <button onclick="calculate_circle()">Рассчитать</button>
+        
+            <p style="font-size: 20px; margin-bottom: -5px;">Площадь круга: <span id="area_circle"></span></p>
+            <p style="font-size: 20px;">Периметр окружности: <span id="perimeter_circle"></span></p>
+        </div>
+        <div class="task1__4" style="border: 4px solid black; padding: 10px; width: 45%;">
+            <h3 style="font-size: 27px;">Калькулятор площади треугольника</h3>
+            <h3 style="font-size: 20px;">Длины сторон:</h3>
+            <label for="treu_value_1" style="font-size: 20px;">1: </label>
+            <input type="number" id="treu_value_1" style="width: 130px; margin-right: 10px;">
+            <label for="treu_value_2" style="font-size: 20px;">2: </label>
+            <input type="number" id="treu_value_2" style="width: 130px; margin-right: 10px;">
+            <label for="treu_value_3" style="font-size: 20px;">3: </label>
+            <input type="number" id="treu_value_3" style="width: 130px; margin-right: 20px;">
+            <button onclick="calculate_treu()">Рассчитать</button>
+        
+            <p style="font-size: 20px; margin-bottom: -5px;">Площадь треугольника: <span id="area_treu"></span></p>
+        </div>
+    </div>
+
+    <h2 style="font-size: 40px; text-align: center">
+      Математические калькуляторы на JavaScript
+    </h2>
+    <div
+      class="task2"
+      style="
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 30px;
+      "
+    >
+      <div
+        class="task2__1"
+        style="border: 4px solid black; padding: 10px; width: 45%"
+      >
+        <h3 style="font-size: 27px">Корни квадратного уравнения</h3>
+        <h3 style="font-size: 20px">Введите коэффициенты:</h3>
+        <label for="korni_kv_1" style="font-size: 20px">A:</label>
+        <input
+          type="number"
+          id="korni_kv_1"
+          style="width: 130px; margin-right: 10px"
+        />
+        <label for="korni_kv_2" style="font-size: 20px">B:</label>
+        <input
+          type="number"
+          id="korni_kv_2"
+          style="width: 130px; margin-right: 10px"
+        />
+        <label for="korni_kv_3" style="font-size: 20px">C:</label>
+        <input
+          type="number"
+          id="korni_kv_3"
+          style="width: 130px; margin-right: 20px"
+        />
+        <button onclick="korni_kv()">Рассчитать</button>
+
+        <h3 style="font-size: 20px">Корни уравнения:</h3>
+        <p style="font-size: 20px; margin-bottom: -5px">
+          X1:<span id="koren_x1" style="margin-left: 7px"></span>
+        </p>
+        <p style="font-size: 20px">
+          X2:<span id="koren_x2" style="margin-left: 7px"></span>
+        </p>
+      </div>
+      <div
+        class="task2__2"
+        style="border: 4px solid black; padding: 10px; width: 45%"
+      >
+        <h3 style="font-size: 27px">Тройка Пифагора</h3>
+        <h3 style="font-size: 20px">Введите три числа:</h3>
+        <label for="troyka_1" style="font-size: 20px">1:</label>
+        <input
+          type="number"
+          id="troyka_1"
+          style="width: 130px; margin-right: 10px"
+        />
+        <label for="troyka_2" style="font-size: 20px">2:</label>
+        <input
+          type="number"
+          id="troyka_2"
+          style="width: 130px; margin-right: 10px"
+        />
+        <label for="troyka_3" style="font-size: 20px">3:</label>
+        <input
+          type="number"
+          id="troyka_3"
+          style="width: 130px; margin-right: 20px"
+        />
+        <button onclick="troyka()">Рассчитать</button>
+
+        <h3 style="font-size: 20px">
+          Являются ли данные три числа тройкой Пифагора?
+        </h3>
+        <p id="troyka" style="font-size: 20px; margin-top: -5px"></p>
+      </div>
+      <div
+        class="task2__3"
+        style="border: 4px solid black; padding: 10px; width: 45%"
+      >
+        <h3 style="font-size: 27px">Делители числа</h3>
+        <h3 style="font-size: 20px">Введите число:</h3>
+        <label for="del_1" style="font-size: 20px">1:</label>
+        <input type="number" id="del_1" />
+        <button onclick="del()">Рассчитать</button>
+
+        <h3 style="font-size: 20px">Список делителей данного числа:</h3>
+        <p
+          id="del"
+          style="
+            font-size: 20px;
+            margin-top: -5px;
+            width: 100%;
+            word-wrap: break-word;
+          "
+        ></p>
+      </div>
+      <div
+        class="task2__4"
+        style="border: 4px solid black; padding: 10px; width: 45%"
+      >
+        <h3 style="font-size: 27px">Делители двух чисел</h3>
+        <h3 style="font-size: 20px">Введите числа:</h3>
+        <label for="delit_1" style="font-size: 20px">1:</label>
+        <input type="number" id="delit_1" style="margin-right: 10px;"/>
+        <label for="delit_2" style="font-size: 20px">2:</label>
+        <input type="number" id="delit_2" style="margin-right: 20px;"/>
+        <button onclick="delit()">Рассчитать</button>
+
+        <h3 style="font-size: 20px">Список общих делителей данных чисел:</h3>
+        <p
+          id="delit"
+          style="
+            font-size: 20px;
+            margin-top: -5px;
+            width: 100%;
+            word-wrap: break-word;
+          "
+        ></p>
+      </div>
+      <div
+        class="task2__5"
+        style="border: 4px solid black; padding: 10px; width: 45%"
+      >
+        <h3 style="font-size: 27px">Наибольший общий делитель</h3>
+        <h3 style="font-size: 20px">Введите числа:</h3>
+        <label for="delitel_1" style="font-size: 20px">1:</label>
+        <input type="number" id="delitel_1" style="margin-right: 10px;"/>
+        <label for="delitel_2" style="font-size: 20px">2:</label>
+        <input type="number" id="delitel_2" style="margin-right: 20px;"/>
+        <button onclick="delitel()">Рассчитать</button>
+
+        <h3 style="font-size: 20px">Наибольший общий делитель данных чисел:</h3>
+        <p
+          id="delitel"
+          style="
+            font-size: 20px;
+            margin-top: -5px;
+            width: 100%;
+            word-wrap: break-word;
+          "
+        ></p>
+      </div>
+      <div
+        class="task2__6"
+        style="border: 4px solid black; padding: 10px; width: 45%"
+      >
+        <h3 style="font-size: 27px">Наименьшее общее кратное</h3>
+        <h3 style="font-size: 20px">Введите числа:</h3>
+        <label for="krat_1" style="font-size: 20px">1:</label>
+        <input type="number" id="krat_1" style="margin-right: 10px;"/>
+        <label for="krat_2" style="font-size: 20px">2:</label>
+        <input type="number" id="krat_2" style="margin-right: 20px;"/>
+        <button onclick="krat()">Рассчитать</button>
+
+        <h3 style="font-size: 20px">Наименьшее общее кратное данных чисел:</h3>
+        <p
+          id="krat"
+          style="
+            font-size: 20px;
+            margin-top: -5px;
+            width: 100%;
+            word-wrap: break-word;
+          "
+        ></p>
+      </div>
+    </div>
+
+    <h2 style="font-size: 40px; text-align: center">
+        Игра угадай число на JavaScript
+    </h2>    
+    <div class="task3" style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px;">
+        <div class="task1__1" style="border: 3.5px solid black; padding: 10px; width: 80%;">
+            <h3 style="font-size: 20px; font-weight: normal;">Правила игры: компьютер загадывает число от <span style="color: red"> 1 до 100.</span> Следом игрок вводит число от 1 до 100, пытаясь <span style="color: red"> угадать</span>, что же загадал компьютер.
+                Если игрок ввел число, <span style="color:mediumblue"> меньше загаданного</span>, компьютер напишет <span style="color: blue;">'Введите число побольше..',</span> а если введено <span style="color: green">больше загаданного</span>, то, соответственно, компьютер напишет <span style="color: green">'Введите число поменьше..'.</span> Погнали!
+            </h3>
+            
+            <label for="knopka_1" style="font-size: 20px; margin-right: 15px;">Нажмите на кнопку, чтоб компьютер загадал число: </label>
+            <button onclick="knopka_1()">Загадать</button> <br> <br>
+
+            <label for="knopka_2" style="font-size: 20px;">Введите ваше число : </label>
+            <input type="number" id="knopka_2" style="margin-right: 15px;" disabled>
+            <button onclick="knopka_2()" id="button" disabled>Проверить</button>
+
+            <p id="invis" style="display: none; font-size: 25px;">Количество попыток: <span id="count"></span></p>
+
+            <p id="game_area" style="font-size: 25px;"></p>
+        </div>
+    </div>
+    
+    
+    <script>
+      const calculate_square = () => {
+        const sideLength = Number(
+          document.getElementById("square_value").value
+        );
+        document.getElementById("area_square").innerHTML =
+          sideLength * sideLength;
+        document.getElementById("perimeter_square").innerText = sideLength * 4;
+      };
+      const calculate_pryamo = () => {
+        const sideLength1 = Number(
+          document.getElementById("pryamo_value_1").value
+        );
+        const sideLength2 = Number(
+          document.getElementById("pryamo_value_2").value
+        );
+        document.getElementById("area_pryamo").innerHTML =
+          sideLength1 * sideLength2;
+        document.getElementById("perimeter_pryamo").innerText =
+          sideLength1 * 2 + sideLength2 * 2;
+      };
+      const calculate_circle = () => {
+        const sideLength = Number(
+          document.getElementById("circle_value").value
+        );
+        document.getElementById("area_circle").innerHTML = (
+          sideLength *
+          sideLength *
+          3.14
+        ).toFixed(0);
+        document.getElementById("perimeter_circle").innerText = (
+          sideLength *
+          2 *
+          3.14
+        ).toFixed(0);
+      };
+      const calculate_treu = () => {
+        const sideLength1 = Number(
+          document.getElementById("treu_value_1").value
+        );
+        const sideLength2 = Number(
+          document.getElementById("treu_value_2").value
+        );
+        const sideLength3 = Number(
+          document.getElementById("treu_value_3").value
+        );
+        const sum = (sideLength1 + sideLength2 + sideLength3) / 2;
+        document.getElementById("area_treu").innerHTML = Math.sqrt(
+          sum * (sum - sideLength1) * (sum - sideLength2) * (sum - sideLength3)
+        ).toFixed(0);
+      };
+
+      function korni_kv() {
+        const a = Number(document.getElementById("korni_kv_1").value);
+        const b = Number(document.getElementById("korni_kv_2").value);
+        const c = Number(document.getElementById("korni_kv_3").value);
+
+        const dis = b ** 2 - 4 * a * c;
+        const x1 = (-b + Math.sqrt(dis)) / (2 * a);
+        const x2 = (-b - Math.sqrt(dis)) / (2 * a);
+
+        if (dis < 0) {
+          document.getElementById("koren_x1").innerText = "Нет корней";
+          document.getElementById("koren_x2").innerText = "Нет корней";
+        } else {
+          document.getElementById("koren_x1").innerText = x1.toFixed(0);
+          document.getElementById("koren_x2").innerText = x2.toFixed(0);
+        }
+      }
+      function troyka() {
+        document.getElementById("troyka").innerText = ''
+        const a = Number(document.getElementById("troyka_1").value);
+        const b = Number(document.getElementById("troyka_2").value);
+        const c = Number(document.getElementById("troyka_3").value);
+
+        const x = Math.max(a, b, c);
+        const z = Math.min(a, b, c);
+        const y = (a + b + c - x - z) ** 2;
+
+        if (x ** 2 === y + z ** 2) {
+          document.getElementById("troyka").innerText = "Да, являются!";
+        } else {
+          document.getElementById("troyka").innerText = "Нет, не являются!";
+        }
+      }
+      function del() {
+        const x = Number(document.getElementById("del_1").value);
+        let x1 = x;
+        const mas = [1, x];
+
+        for (let i = 2; i < x1; i++) {
+          if (x % i == 0) {
+            mas.push(i);
+            mas.push(x / i);
+            x1 = x1 / i;
+          }
+        }
+        mas.sort(function (a, b) {
+          return a - b;
+        });
+        document.getElementById("del").innerText = mas;
+      }
+      function delit() {
+        document.getElementById("delit").innerText = ''
+        const x = Number(document.getElementById("delit_1").value);
+        const y = Number(document.getElementById("delit_2").value);
+        let z = Math.min(x, y)
+        const mas = [];
+
+        for (let i = 1; i < z+1; i++) {
+          if (x % i === 0 && y % i === 0) {
+            mas.push(i)
+          }
+        }
+        mas.sort(function (a, b) {
+          return a - b;
+        });
+        document.getElementById("delit").innerText = mas;
+      }
+      function delitel() {
+        document.getElementById("delitel").innerText = ''
+        const x = Number(document.getElementById("delitel_1").value);
+        const y = Number(document.getElementById("delitel_2").value);
+        let z = Math.min(x, y)
+
+        for (let i = z; i > 0; i--) {
+          if (x % i === 0 && y % i === 0) {
+            console.log(i, x, y)
+            document.getElementById("delitel").innerText = i
+            break
+          }
+        }
+      }
+      function krat() {
+        document.getElementById("krat").innerText = ''
+        const x = Number(document.getElementById("krat_1").value);
+        const y = Number(document.getElementById("krat_2").value);
+        let z = Math.min(x, y)
+
+        for (let i = z; i > 0; i--) {
+          if (x % i === 0 && y % i === 0) {
+            console.log(i, x, y)
+            document.getElementById("krat").innerText = x*y/i
+            break
+          }
+        }
+      }
+      
+      let number
+      let count 
+      const knopka_1 = () => {
+        number = (Math.random() * 100 + 1).toFixed(0)
+        document.getElementById('invis').style.display = 'block'
+        document.getElementById('count').innerHTML = 0
+
+        document.getElementById('knopka_2').disabled = false
+        document.getElementById('button').disabled = false
+        document.getElementById('game_area').innerText = ''
+        count = 0
+      }
+      const knopka_2 = () => {
+        let users_number = Number(document.getElementById('knopka_2').value)
+        if (!(users_number >= 1 && users_number <= 100)) {
+            document.getElementById('game_area').style.color = 'red'
+            document.getElementById('game_area').style.fontWeight = 'bold'
+            document.getElementById('game_area').style.textTransform = 'uppercase'
+            document.getElementById('game_area').innerHTML = 'Следуйте правилам игры!..'
+        }
+        else if (users_number < number) {
+            document.getElementById('game_area').style.color = 'black'
+            document.getElementById('game_area').style.fontWeight = 'normal'
+            document.getElementById('game_area').style.textTransform = 'none'
+            document.getElementById('game_area').innerHTML = 'Введите число побольше..'
+            count++
+        }
+        else if (users_number > number) {
+            document.getElementById('game_area').style.color = 'black'
+            document.getElementById('game_area').style.fontWeight = 'normal'
+            document.getElementById('game_area').style.textTransform = 'none'
+            document.getElementById('game_area').innerHTML = 'Введите число поменьше..'
+            count++
+        }
+        else if (users_number == number) {
+            document.getElementById('game_area').style.color = 'green'
+            document.getElementById('game_area').style.fontWeight = 'bold'
+            document.getElementById('game_area').style.textTransform = 'uppercase'
+            document.getElementById('game_area').innerHTML = 'Вы угадали!'
+            count++
+            document.getElementById('game_area').innerHTML = 'Вы угадали!'
+            document.getElementById('knopka_2').disabled = true
+            document.getElementById('button').disabled = true
+        }
+        document.getElementById('count').innerHTML = count
+      }    
+    </script>
+  </body>
+</html>
